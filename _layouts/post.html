@@ -1,0 +1,55 @@
+---
+layout: default
+---
+<div class="post">
+    <div class="posttitle">
+        <h1>{{ page.title }}</h1>
+    </div>
+
+    <div class="postdct">
+        {{ page.date | date: '%Y/%m/%d'}} 
+        {% if page.category %}
+            {% for c in page.category %}
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{{ site.url }}/{{ site.categoryurl }}{{ c }}">{{ c }}</a> 
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="copyright"><a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">除非另有声明，本网站采用自由转载-非商用-非衍生-保持署名 ——转载务必注明出处</a></div>
+    <div class="desc">
+        <blockquote>简介：{{ page.desc }}</blockquote> 
+    </div>
+    <div class="postcontent">
+        {{ content }}
+    </div>
+</div>
+
+<!--上下翻页-->
+    <ul class="pager pagination-sm">
+        <!--前一页-->
+        {% if page.previous %}
+        <li class="previous">
+            <a href="{{ site.BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; 上一篇</a>
+        </li>
+        {% else %}
+        <li class="previous disabled">
+            <a>&larr; 上一篇</a>
+        </li>
+        {% endif %}
+
+        <!--下一页-->
+        {% if page.next %}
+        <li class="next">
+            <a href="{{ site.BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">下一篇 &rarr;</a>
+        </li>
+        {% else %}
+        <li class="next disabled">
+            <a>下一篇 &rarr;</a>
+        </li>
+        {% endif %}
+    </ul>
+
+    {% include comment.html %}
+
+
+

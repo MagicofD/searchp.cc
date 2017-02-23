@@ -1,0 +1,24 @@
+title: searchpcc
+url: "http://searchp.cc"
+homeurl: "http://searchp.cc"
+baseurl: ""
+blogurl: "http://searchp.cc"
+jekyll: "http://jekyllrb.com"
+categoryurl: "categories.html#"
+archive: "archives.html"
+category: "categories.html"
+read: "read.html"
+email: i@searchp.cc
+author: searchpcc
+paginate: 10
+paginate_path: "/page/:num"
+markdown: kramdown
+gems:
+    - jekyll-paginate
+
+# 常量定义
+headtitle: searchpcc | Keep Calm and Carry On
+headermastertitle: searchpcc
+headerslavetitle: Keep Calm and Carry On
+
+

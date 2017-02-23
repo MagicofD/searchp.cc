@@ -1,0 +1,41 @@
+---
+layout: default
+title: Keep Calm and Carry On
+---
+<div class="maincontent">
+    <h1 class="desctitle">0X00 关于</h1>
+    <div id="shuoming">
+         searchpcc，一个「有些许强迫症的」，「热爱互联网的」，「喜欢专研的」，「专注于Web 开发的」， 不乐于安于现状的 IT 攻城狮。Console 里面有我的联系方式。
+    </div>
+
+    <h1 class="desctitle">0X01 置顶</h1>
+    <div id="top">
+        {% for top in site.posts %}
+            <h3><a href="{{ top.url | prepend: site.baseurl }}">{{ top.title }}</a></h3>
+            <p>{{ top.desc }} <a href="{{ top.url | prepend: site.baseurl }}">继续阅读</a> </p>
+            <div class="ct">
+                {% for c in top.category %}
+                {{ top.date | date: '%Y/%m/%d' }}
+                <a href="{{ site.baseurl }}{{ site.categoryurl }}{{ c }}">「{{ c }}」</a>
+                {% endfor %}
+            </div>
+            {% break %}
+        {% endfor %}
+    </div>
+
+    <h1 class="desctitle">0X02 列表</h1>
+    <div id="list">
+        <ul>
+            {% for post in paginator.posts %}
+                <li>
+                {{ post.date | date: '%Y/%m/%d' }} <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                {% if post.category %}
+                    {% for c in post.category %}<a href="/{{ site.categoryurl }}{{ c }}">「{{ c }}」</a>{% endfor %}
+                {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% include pagination.html %}
+

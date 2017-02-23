@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% include head.html %}
+</head>
+<body>
+    <div class="container-fluid">
+    <div class="row">
+            <div class="maincontent col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 " >
+                {% include header.html %}
+                <div class="main">
+                    {{ content }}
+                </div>
+            </div>
+    </div>
+    </div>
+    {% include footer.html %}
+    {% include scripts.html %}
+</body>
+</html>
+
